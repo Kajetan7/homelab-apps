@@ -12,6 +12,8 @@ spec:
     helm:
       releaseName: kube-prometheus-stack
       values: |
+        crds:
+          enabled: false
         grafana:
           admin:
             existingSecret: grafana-admin-secret
@@ -26,3 +28,5 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+  dependsOn:
+    - name: kube-prometheus-stack-crds

@@ -1,20 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: letsencrypt-staging-issuer
+  name: kube-prometheus-stack-crds
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: 'https://github.com/Kajetan7/homelab-apps.git'
     targetRevision: HEAD
-    path: infra/crds/letsencrypt-staging-issuer.yaml
+    path: infra/crds/kube-prometheus-stack-crds.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: cert-manager
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-  dependsOn:
-    - name: cert-manager
