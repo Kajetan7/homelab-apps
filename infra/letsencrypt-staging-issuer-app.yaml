@@ -8,9 +8,9 @@ spec:
   source:
     repoURL: 'https://github.com/Kajetan7/homelab-apps.git'
     targetRevision: HEAD
-    path: infra/letsencrypt-staging-issuer.yaml
+    path: infra/letsencrypt-staging-issuer
     directory:
-      recurse: false
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: cert-manager
