@@ -8,7 +8,9 @@ spec:
   source:
     repoURL: 'https://github.com/Kajetan7/homelab-apps.git'
     targetRevision: HEAD
-    path: infra/crds/letsencrypt-staging-issuer.yaml
+    path: infra/crds
+    directory:
+      include: letsencrypt-staging-issuer.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: cert-manager

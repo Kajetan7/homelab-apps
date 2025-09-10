@@ -8,7 +8,9 @@ spec:
   source:
     repoURL: 'https://github.com/Kajetan7/homelab-apps.git'
     targetRevision: HEAD
-    path: infra/crds/kube-prometheus-stack-crds.yaml
+    path: infra/crds
+    directory:
+      include: kube-prometheus-stack-crds.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
